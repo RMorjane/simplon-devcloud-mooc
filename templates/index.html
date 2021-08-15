@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'index.css') }}">
+    <title>{% block title %} MOOC {% endblock %}</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+        
+</head>
+<body>
+
+    <div class="main-nav">
+        <div class="logo"></div>
+        <ul class="nav-links"> <!-- barre de navigation contenant les items du menu -->
+            <li><a onclick="setUrl('courses')">Courses</a></li> <!-- page d'acceuil -->
+            <li><a onclick="setUrl('signup')">Sign Up</a></li> <!-- page d'inscription d'un utilisateur -->
+            <li><a onclick="setUrl('signin')">Sign In</a></li> <!-- page de connexion d'un utilisateur -->
+        </ul>
+        <div id="burger" class="burger"> <!-- menu burger -->
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+    </div>
+    
+	<iframe id="ctn" name="containt" src="/courses" frameborder="0" allowfullscreen></iframe>
+	
+</body>
+
+</html>

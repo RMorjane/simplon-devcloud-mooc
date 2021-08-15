@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body{
+    background: white;
+  }
+
+  .main-nav {
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    background: #57496E;
+  }
+
+  .logo {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    padding: 0 2rem;
+  }
+
+  .nav-links {
+    cursor: pointer;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+  }
+
+  .nav-links a:hover{
+      color: yellow;
+  }
+
+  .burger {
+    display: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .line {
+    height: 2px;
+    width: 35px;
+    margin: 0.5rem 0;
+    background: #daf8e3;
+    transition: transform 0.75s ease, opacity 0.75s ease;
+  }
+
+  .main-nav.show .line1 {
+    transform: translate(-10px) rotate(45deg) translate(15px);
+  }
+
+  .main-nav.show .line2 {
+    opacity: 0;
+  }
+
+  .main-nav.show .line3 {
+    transform: translate(-10px) rotate(-45deg) translate(15px);
+  }
+
+  .main-nav.show .nav-links {
+    transform: translateX(0%);
+  }
+
+  iframe{
+    width:218.5vh;
+    height:91vh;
+    scroll-behavior: auto;
+  }
+
+  /* CSS FOR SIGNIN AND SIGNUP */
+
+.sign {
+  width: 386px;
+  height: 50px;
+  border-radius: 0.5em;
+  border-color: #CCC4D8;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+form .p1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 41,06px;
+  text-align: left;
+  margin-left: 150px;
+}
+
+form .p2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #7C689B;
+  text-align: left;
+  margin-left: 150px;
+}
+
+.btn-submit {
+  width: 127px;
+  height: 51px;
+  left: 527px;
+  margin-top: 8px;
+  margin-right: 0.5em;
+  background: #7C689B;
+  color: #FFFFFF;
+  border-radius: 0.5em;
+  border-right: none;
+}
+
+.btn-link {
+  width: 127px;
+  height: 51px;
+  left: 527px;
+  margin-top: 8px;
+  margin-right: 0.5em;
+  background: #FFFFFF;
+  color: #7C689B;
+  border-radius: 0.5em;
+  border-style: none;
+}
+
+.btn-sign {
+  display: flex;
+  width: 386px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-form {
+  width: 50%;
+  height: 50px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+  
+@media screen and (max-width: 800px) {
+
+  .nav-links {
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    height: 92vh;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #005582;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+   
+}

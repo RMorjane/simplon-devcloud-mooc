@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'index.css') }}">
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="div-form">
+        <form action="/user/signup" method="post">
+            <p class="p1">Sign Up</p>
+            <p class="p2">Passwords empty or do not match.<br>
+            An email address is required.<br>
+            A name for the user is required.
+            </p>
+            <input class="sign" type="email" name="email" placeholder="Enter your email"><br>
+            <input class="sign" type="text" name="username" placeholder="Enter your name"><br>
+            <input class="sign" type="password" name="password1" placeholder="Enter your password"><br>
+            <input class="sign" type="password" name="password2" placeholder="Confirm your password"><br>
+            <div class="btn-sign">
+                <input class="btn-submit" type="submit" value="Sign Up">
+                <input class="btn-link" type="button" value="Sign In" onclick="document.location.href='/signin'">
+            </div>
+        </form>        
+    </div>
+
+</body>
+</html>
