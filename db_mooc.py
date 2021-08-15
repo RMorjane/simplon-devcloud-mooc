@@ -5,7 +5,7 @@ class DBMooc:
     def __init__(self):
         self.connection = None
         self.list_roles: list[Role] = []
-        self.list_privileges: list[Role] = []
+        self.list_privileges: list[Privilege] = []
         
     def connect(self):
         try:
@@ -30,6 +30,21 @@ class DBMooc:
                 cursor.close()
         except (Exception, mysql.connector.Error) as error:
             print("Error : %s" %(error))
+            
+    def read_privileges(self):
+        try:
+            with self.connection.cursor() as cursor:
+                sql_query = "SELECT * FROM Privilege"
+                cursor.execute(sql_query)
+                self.list_privileges = []
+                for loop_privilege in cursor.fetchall():
+                    privilege = Privilege()
+                    privilege.set_privilegeID(loop_privilege[0])
+                    privilege.set_privilegename(loop_privilege[1])
+                    self.list_privileges.append(privilege)
+                cursor.close()
+        except (Exception, mysql.connector.Error) as error:
+            print("Error : %s" %(error))        
             
 class Permission:
     
